@@ -14,7 +14,7 @@ export default function Login() {
 
 function logar (){
 
-  const logando = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login',
+  const logando = axios.post('localhost:5000/sign-in',
   {
     email: email,
     password: senha

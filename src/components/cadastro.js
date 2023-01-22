@@ -14,7 +14,7 @@ export default function Cadastro() {
     console.log(info)
 
     function Cadastrar(){
-        const cadastro = axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up',
+        const cadastro = axios.post('localhost:5000/sign-up',
         {
             email: email,
             name: name,
