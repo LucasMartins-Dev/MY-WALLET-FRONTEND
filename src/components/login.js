@@ -14,7 +14,7 @@ export default function Login() {
 
 function logar (){
 
-  const logando = axios.post('localhost:5000/sign-in',
+  const logando = axios.post("http://localhost:5000/sign-in",
   {
     email: email,
     password: senha

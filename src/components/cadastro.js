@@ -8,18 +8,19 @@ export default function Cadastro() {
   const navigate = useNavigate();
     const[email,setemail]=useState('')
     const[senha,setsenha]=useState('')
-    const[image,setimage]=useState('')
+    const[confirmpassword,setconfirmpassword]=useState('')
     const[name,setname]=useState('')
     const[info,setinfo]=useState([])
     console.log(info)
 
     function Cadastrar(){
-        const cadastro = axios.post('localhost:5000/sign-up',
+        const cadastro = axios.post("http://localhost:5000/sign-up",
         {
-            email: email,
             name: name,
-            image: image,
-            password: senha
+            email: email,
+            password: senha,
+            confirmpassword: confirmpassword,
+            
         }
         )
         cadastro.then(deucerto)
@@ -46,7 +47,7 @@ export default function Cadastro() {
       </Input>
       
       <Input>
-        <input  onChange={event => setimage(event.target.value)} placeholder="Confirme a senha"></input>
+        <input  onChange={event => setconfirmpassword(event.target.value)} placeholder="Confirme a senha"></input>
       </Input>
       <Botao>
         <button  onClick={Cadastrar}>Cadastrar</button>
