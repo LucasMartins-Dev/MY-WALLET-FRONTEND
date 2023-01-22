@@ -28,7 +28,7 @@ function logar (){
 
 function respondeu(response){
   setinfo(response.data)
-  navigate("/hoje")
+  navigate("/home")
     console.log('oi')
 }
 
