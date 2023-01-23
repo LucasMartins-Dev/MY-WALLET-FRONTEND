@@ -11,7 +11,7 @@ export default function Cadastro() {
     const[confirmpassword,setconfirmpassword]=useState('')
     const[name,setname]=useState('')
     const[info,setinfo]=useState([])
-    console.log(info)
+  
 
     function Cadastrar(){
         const cadastro = axios.post("http://localhost:5000/sign-up",

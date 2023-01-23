@@ -10,9 +10,9 @@ import { UserContext } from './token';
 export default function Balance ({User, usuname}){
     let soma;
     
-    console.log(soma)
+  
     const [items, setItems] = useState([]);
-    console.log(items)
+
   
   const navigate = useNavigate();
 

@@ -11,8 +11,7 @@ export default function Login({setusuname}) {
   const[email,setemail]=useState('')
   const[senha,setsenha]=useState('')
   const[info,setinfo]=useState(null)
-  console.log(email)
-  console.log(info)
+ 
 
 function logar (){
 
@@ -34,7 +33,7 @@ function respondeu(response){
   setUser(response.data.token)
   setusuname(response.data.user)
   navigate("/home")
-    console.log(response.data)
+   
 }
 
   return (

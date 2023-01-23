@@ -31,7 +31,7 @@ export default function Saida ({User}){
     }
 
     function resp(res){
-      console.log(res)
+      
     }
     return(
         <Tela>

@@ -31,7 +31,7 @@ export default function Entrada ({User}){
     }
 
     function resp(res){
-      console.log(res)
+      
     }
     return(
         <Tela>

@@ -10,10 +10,9 @@ import { useState } from "react";
 
 export default function App() {
   const [User, setUser] = useState({});
-  console.log(User)
+
   const [usuname,setusuname] = useState('fulano')
-  console.log(User)
-  console.log(usuname)
+  
 
   return (
     
