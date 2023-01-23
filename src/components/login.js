@@ -1,10 +1,12 @@
 import styled  from 'styled-components'
 import { Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState , useContext} from 'react';
 import axios from 'axios';
+import { UserContext } from './token';
 
-export default function Login() {
+export default function Login({setusuname}) {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const[email,setemail]=useState('')
   const[senha,setsenha]=useState('')
@@ -27,9 +29,12 @@ function logar (){
 }
 
 function respondeu(response){
+
   setinfo(response.data)
+  setUser(response.data.token)
+  setusuname(response.data.user)
   navigate("/home")
-    console.log('oi')
+    console.log(response.data)
 }
 
   return (
@@ -63,24 +68,30 @@ background-color: #8C11BE;
 `
 
 const Cadastro = styled.div`
-
+font-family: 'Raleway', sans-serif;
+font-size: 15px;
+font-weight: 700;
 color: white;
 `;
 const Titulo = styled.div`
+font-family: 'Saira Stencil One', cursive;
+margin-bottom: 25px;
 display: flex;
 align-items: center;
 justify-content: center;
-  font-family: 'Playball', cursive;
   font-weight: 400;
   font-size: 32px;
   color: white;
 `;
 
 const Input = styled.div`
+margin-bottom: 7px;
   input {
     box-sizing: border-box;
     padding-left: 10px;
-  
+    font-family: 'Raleway', sans-serif;
+font-size: 15px;
+font-weight: 700;
     margin-bottom:5px ;
     border-radius: 5px;
     border: 1px solid #d4d4d4;
@@ -89,9 +100,12 @@ const Input = styled.div`
   }
 `;
 const Botao = styled.div`
+margin-bottom: 30px;
   button {
     border-radius: 5px;
-   
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    font-weight: 700;
     margin-bottom:5px ;
     border: none;
     width: 303px;
